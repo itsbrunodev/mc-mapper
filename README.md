@@ -40,7 +40,8 @@ bun precache
 
 This command will extract necessary block textures and create a `texture_cache.json` file.
 
-> [!NOTE] For the time being, textures in the assets folder are from version 1.21.5, any new textures are not included. Dynamically imported textures are not yet supported.
+> [!NOTE] 
+> For the time being, textures in the assets folder are from version 1.21.5, any new textures are not included. Dynamically imported textures are not yet supported.
 
 ## Usage
 
@@ -65,7 +66,8 @@ bun start path/to/world/ --incremental
 
 This will process the region files and generate a final map at `./final_map.png`. Intermediate region images are stored in the `./out/` directory.
 
-> [!NOTE] Some regions may be skipped if they are empty or have no renderable content.
+> [!NOTE]
+> Some regions may be skipped if they are empty or have no renderable content.
 
 ## Configuration
 
