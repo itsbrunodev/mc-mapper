@@ -1,0 +1,61 @@
+{
+	"name": "mc-mapper",
+	"description": "🌍 Generate high-quality, top-down 2D maps from Minecraft Java Edition worlds.",
+	"keywords": [
+		"map",
+		"minecraft",
+		"java-edition",
+		"worker",
+		"threads",
+		"world",
+		"render",
+		"bun"
+	],
+	"license": "MIT",
+	"type": "module",
+	"version": "1.0.0-alpha",
+	"bin": {
+		"mc-mapper": "./dist/index.js"
+	},
+	"types": "./dist/index.d.ts",
+	"files": ["dist/*.js", "dist/*.d.ts"],
+	"homepage": "https://github.com/itsbrunodev/mc-mapper#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itsbrunodev/mc-mapper.git"
+	},
+	"bugs": "https://github.com/itsbrunodev/mc-mapper/issues",
+	"scripts": {
+		"start": "bun main/index.ts",
+		"precache": "bun main/precache.ts",
+		"stitch": "bun main/stitch.ts",
+		"watch": "bun main/watch.ts",
+		"build": "bun build --target=node ./main/index.ts --outfile=dist/index.js && bun run build:declaration",
+		"build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
+		"postbuild": "rimraf tsconfig.types.tsbuildinfo",
+		"format-and-lint": "biome check .",
+		"format-and-lint:fix": "biome check . --write",
+		"test": "node tests"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "^1.2.17",
+		"bun-plugin-dts": "^0.3.0",
+		"rimraf": "^6.0.1"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"chalk": "^5.4.1",
+		"chokidar": "^4.0.3",
+		"commander": "^14.0.0",
+		"sharp": "^0.34.2"
+	},
+	"exports": {
+		".": {
+			"import": "./build/release.js",
+			"types": "./build/release.d.ts"
+		}
+	}
+}
