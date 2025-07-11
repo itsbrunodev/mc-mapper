@@ -1,3 +1,6 @@
+> [!NOTE]
+> Development on this project is currently paused. If enough interest is shown, development will resume.
+
 # 🌍 mc-mapper
 
 Generate high-quality, top-down 2D maps from Minecraft Java Edition worlds.
